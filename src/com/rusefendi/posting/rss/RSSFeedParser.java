@@ -105,7 +105,7 @@ public class RSSFeedParser {
     }
 
     private String getURL(String data){
-        Pattern pattern = Pattern.compile("\\b(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]");
+        Pattern pattern = Pattern.compile("\\b(https?)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|].jpg");
         Matcher matcher = pattern.matcher(data);
         if (matcher.find()){
             return matcher.group();
