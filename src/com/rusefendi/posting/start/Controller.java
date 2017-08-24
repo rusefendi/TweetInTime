@@ -32,7 +32,6 @@ public class Controller {
             }
             for(Post entr : entries){
                 System.out.println("Tweeting " + (i + 1) + " post from " + numberOfPosts);
-                System.out.println(entr);
                 twitterPost.post(entr);
                 i++;
                 try{
