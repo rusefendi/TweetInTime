@@ -27,9 +27,7 @@ public class Controller {
             i = 0;
             System.out.println("Parsing feed");
             entries = parser.readFeed();
-            for(Post enti : entries){
-                System.out.println(enti);
-            }
+
             for(Post entr : entries){
                 System.out.println("Tweeting " + (i + 1) + " post from " + numberOfPosts);
                 twitterPost.post(entr);
