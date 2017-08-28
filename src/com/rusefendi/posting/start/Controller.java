@@ -8,8 +8,8 @@ import java.util.List;
 
 public class Controller {
     public static void main(String[] args){
-        final int minutesPerPost = 45;
-        final int numberOfPosts = 24;
+        final int minutesPerPost = 60;
+        final int numberOfPosts = 12;
 
         List<Post> entries;
         int i;
