@@ -14,13 +14,13 @@ public class Controller {
         List<Post> entries;
         int i;
 
-        RSSFeedParser parser = new RSSFeedParser("https://pikabu.ru/xmlfeeds.php?cmd=popular");
+        RSSFeedParser parser = new RSSFeedParser(args[0]);
         System.out.println("RSSFeedParser created");
 
-        TwitterPost twitterPost = new TwitterPost("33F6LugqzzM6NAbAJAqOTBR0F",
-                "b0CkKt5v6J3vT9gTziS7w6jGBXNX0tGrQWU37PXPtz8cMSO3RS",
-                "915101400-gMY1SYhbu0dbyZQoy986uFbSmm8xykyafwxg1qLk",
-                "JhudrgJMZboFl4yWjWInw5OE3F4M2hekjtebcS7CeuiFU");
+        TwitterPost twitterPost = new TwitterPost(args[1],
+                args[2],
+                args[3],
+                args[4]);
         System.out.println("TwitterPost created");
 
         while(true){
