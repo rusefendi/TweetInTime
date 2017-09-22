@@ -10,28 +10,20 @@ import java.net.URL;
 import java.net.URLConnection;
 
 public class TwitterPost {
-    String consumerKey;
-    String consumerSecret;
-    String accessToken;
-    String accessSecret;
+    private Twitter twitter;
+
 
     public TwitterPost(String consumerKey, String consumerSecret, String accessToken, String accessSecret){
-        this.consumerKey = consumerKey;
-        this.consumerSecret = consumerSecret;
-        this.accessToken = accessToken;
-        this.accessSecret = accessSecret;
-    }
-
-
-    public void post(Post post){
         ConfigurationBuilder cb = new ConfigurationBuilder();
         cb.setDebugEnabled(true).setOAuthConsumerKey(consumerKey).setOAuthConsumerSecret(consumerSecret)
                 .setOAuthAccessToken(accessToken)
                 .setOAuthAccessTokenSecret(accessSecret);
-
         TwitterFactory tf = new TwitterFactory(cb.build());
-        Twitter twitter = tf.getInstance();
+        twitter = tf.getInstance();
+    }
 
+
+    public void post(Post post){
         try{
             StatusUpdate statusUpdate = new StatusUpdate(post.getTitle() + " " + post.getLink());
             String imageURL = post.getImageURL();
